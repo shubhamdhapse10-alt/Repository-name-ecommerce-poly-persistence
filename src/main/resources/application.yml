@@ -1,0 +1,42 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ecommerce-poly-persistence
+
+  # ---------- PostgreSQL (orders, payments, inventory, users) ----------
+  datasource:
+    url: jdbc:postgresql://localhost:5433/ecommerce
+    username: ecommerce_user
+    password: ecommerce_pass
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate   # schema is owned by Flyway migrations, not Hibernate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+
+  # ---------- MongoDB (product catalog, reviews, activity logs) ----------
+  data:
+    mongodb:
+      uri: mongodb://mongo_user:mongo_pass@localhost:27018/ecommerce?authSource=admin
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

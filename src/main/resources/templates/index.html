@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ecommerce Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #1f2937;
+        }
+
+        .navbar {
+            height: 70px;
+            background: #111827;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #60a5fa;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 25px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a, #4f46e5);
+            color: white;
+            border-radius: 20px;
+            padding: 45px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: #dbeafe;
+            font-size: 16px;
+        }
+
+        .status {
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.15);
+            padding: 10px 18px;
+            border-radius: 30px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: #22c55e;
+            border-radius: 50%;
+        }
+
+        .cart {
+            font-size: 90px;
+        }
+
+        .section-title {
+            margin: 35px 0 20px;
+            font-size: 22px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+        }
+
+        .icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 26px;
+            margin-bottom: 5px;
+        }
+
+        .card p {
+            color: #6b7280;
+        }
+
+        .tech-section {
+            margin-top: 30px;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tech {
+            background: #f3f4f6;
+            padding: 18px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .tech small {
+            display: block;
+            margin-top: 5px;
+            color: #6b7280;
+            font-weight: normal;
+        }
+
+        footer {
+            text-align: center;
+            color: #6b7280;
+            padding: 35px;
+        }
+
+        @media(max-width: 800px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 30px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .cart {
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        Ecommerce<span>Hub</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Dashboard</a>
+        <a href="/swagger-ui.html" target="_blank">API Docs</a>
+        <a href="#">Products</a>
+        <a href="#">Orders</a>
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <div class="hero">
+
+        <div>
+            <h1>Ecommerce Platform</h1>
+
+            <p>
+                Poly-Persistence Ecommerce Application
+            </p>
+
+            <div class="status">
+                <span class="dot"></span>
+                Application is running
+            </div>
+        </div>
+
+        <div class="cart">
+            🛒
+        </div>
+
+    </div>
+
+
+    <h2 class="section-title">
+        Application Overview
+    </h2>
+
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🛍️</div>
+            <h3>Products</h3>
+            <p>Product management</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📦</div>
+            <h3>Orders</h3>
+            <p>Order processing</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">👥</div>
+            <h3>Users</h3>
+            <p>User management</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⚡</div>
+            <h3>APIs</h3>
+            <p>REST API services</p>
+        </div>
+
+    </div>
+
+
+    <div class="tech-section">
+
+        <h2>Technology Stack</h2>
+
+        <div class="tech-grid">
+
+            <div class="tech">
+                ☕ Java 17
+                <small>Backend Runtime</small>
+            </div>
+
+            <div class="tech">
+                🍃 Spring Boot
+                <small>Application Framework</small>
+            </div>
+
+            <div class="tech">
+                🐘 PostgreSQL
+                <small>Relational Database</small>
+            </div>
+
+            <div class="tech">
+                🍃 MongoDB
+                <small>Document Database</small>
+            </div>
+
+            <div class="tech">
+                🔄 Flyway
+                <small>Database Migration</small>
+            </div>
+
+            <div class="tech">
+                🐳 Docker
+                <small>Containerization</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+    Ecommerce Poly Persistence • Spring Boot Application
+</footer>
+
+</body>
+</html>
